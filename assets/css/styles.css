@@ -1,10 +1,10 @@
 html, body {
     margin: 0px;
     background-color: #2F4F30;
-     color:white
+    color:white
 }
 
-
+/*
 .titulo {
     text-align: center;
     background-color: black;
@@ -12,7 +12,7 @@ html, body {
     padding: 20px;
     font-size: 25px;
 }
-
+*/
 .bj-card{
     position: relative;
     width: 150px;
@@ -23,4 +23,12 @@ html, body {
 #computer-cards, #player-cards{
     height: 240px;
 
+}
+
+#game-modal, #game-modal > .modal-footer{
+        background-color: #4a4343d1;
+}
+
+#game-modal > .modal-footer > .btn-small{
+    color: white;
 }

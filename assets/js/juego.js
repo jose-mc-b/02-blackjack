@@ -1,3 +1,19 @@
+//Materialize
+document.addEventListener('DOMContentLoaded', function() {
+    const elems = document.querySelectorAll('.modal');
+    M.Modal.init(elems, {});    
+  });
+
+
+const showMessage=(title='Game message', message='Thanks for playing')=>{
+    const modalInstance= M.Modal.getInstance(
+        document.querySelector('#game-modal')
+    );
+    document.querySelector('#game-modal-title').innerText=title;
+    document.querySelector('#game-modal-message ').innerText=message;
+    modalInstance.open();
+};
+
 /*
 * 2C = Two of Clubs 
 * 2D = Two of Diamones
@@ -84,12 +100,12 @@ const showImage= (elPosition, cardDrawed)=>{
 const computerTurn = ()=>{
         if (playerPoints>21 || playerPoints<=0){
             computerDraws();
+            showMessage( undefined,'Computer wins')
             return console.log('computer wins');
         }
     
         do{
             computerDraws();
-            console.log('while')
         }while(computerPoints<21 && computerPoints!==21);
         
         let roundResult;
@@ -102,7 +118,7 @@ const computerTurn = ()=>{
          else {
             roundResult = "You win"
          }
-    
+         showMessage( undefined, roundResult)
          console.log(roundResult);
 }
 
@@ -152,3 +168,5 @@ btnNew.addEventListener('click', ()=>{
    deck=[]
    createDeck();
 });
+showMessage();
+
